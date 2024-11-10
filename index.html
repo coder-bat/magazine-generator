@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>Magazine Creator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="app">
+            <h1>Magazine Generator</h1>
+            <div class="template-selection">
+                <p><strong>Select Template for PDF</p></strong>
+                <div class="template-options">
+                    <div class="template-option selected" id="template1" onclick="selectTemplate('template1')">
+                        <img src="/assets/templates/template1.png" alt="Template 1" class="template-image">
+                        <p>Template 1</p>
+                    </div>
+                    <!-- <div class="template-option" id="template2" onclick="selectTemplate('template2')">
+                        <img src="placeholder2.jpg" alt="Template 2" class="template-image">
+                        <p>Template 2</p>
+                    </div>
+                    <div class="template-option" id="template3" onclick="selectTemplate('template3')">
+                        <img src="placeholder3.jpg" alt="Template 3" class="template-image">
+                        <p>Template 3</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="header-section">
+                <div class="brand-info">
+                    <div>
+                        <p><strong>Enter brand name to show in header</strong></p>
+                        <div class="ui input">
+                            <input type="text" placeholder="Brand name" id="brandName">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="brandLogo"><strong>Select logo to in header</strong></label>
+                        <input type="file" name="brandLogo" id="brandLogo" accept="image/*" />
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div>
+                    <p><strong>Enter social links to show in footer</strong></p>
+                    <div class="ui input">
+                        <input type="text" placeholder="Facebook" id="social-facebook">
+                    </div>
+                    <div class="ui input">
+                        <input type="text" placeholder="YouTube" id="social-youtube">
+                    </div>
+                </div>
+            </div>
+            <div class="cover-page-section">
+                <div class="cover-page" data-aos="fade-in">
+                    <div>
+                        <label for="coverImage"><strong>Select cover image for this magazine</strong></label>
+                        <input type="file" name="coverImage" id="coverImage" accept="image/*" />
+                    </div>
+                </div>
+            </div>
+            <div class="magazine-pages-section">
+                <div id="rows"></div>
+            </div>
+            <button onclick="addNewRow()" class="animated-button ui labeled icon button blue">
+                <i class="plus square icon"></i>
+                Add new page
+            </button>
+
+            <button onclick="generatePDF()" class="animated-button ui labeled icon button green">
+                <i class="check icon"></i>
+                Generate Magazine
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
